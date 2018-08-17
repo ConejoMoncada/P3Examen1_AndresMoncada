@@ -83,6 +83,7 @@ main(){
 						tablero[fd][cd] = '+';
 					else
 						tablero[fd][cd] = '#';
+					espacios--;
 					break;
 				case 2: if(turno){
 						tablero[fd][cd] = '+';
