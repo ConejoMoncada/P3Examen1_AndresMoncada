@@ -5,6 +5,10 @@ using namespace std;
 
 char** inicio();
 void print(char**);
+int espacios = 137;
+int v;//para las validaciones
+char ccol;//char columna
+int fi,ci,cd,fd;//filas y columnas iniciales y de destino
 main(){
 	char** tablero = inicio();
 	bool fin = false;
@@ -17,7 +21,7 @@ main(){
 		else 
 			cout << "#";
 		cout << endl;
-		fin = true;
+		
 	}
 	for (int i = 0; i < 12; i++){
 		delete[] tablero[i];

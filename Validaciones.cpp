@@ -56,15 +56,23 @@ int Validaciones::seleccionar(char** tab,bool t, int f, int c){
 }
 
 int Validaciones::valMov(char** tab, int fi, int ci, int fd, int cd){
-	//-1=fuera del tablero 0=espacio ocupado o muy lejos 1=movimiento válido
+	//-1=fuera del tablero 0=espacio ocupado o muy lejos 1=clonar 2=mover
 	if(fd<1 || cd<1 || fd>11 || cd>11)
 		return -1;
 	else {
-		if(abs((fd-fi)) <= 2 && abs((cd-ci)) <= 2){
-			if(tab[fd][cd]=='.')
-				return 1;
-			else
-				return 0;
+		if(abs((fd-fi)) < 3 && abs((cd-ci)) < 3){// < 3 para que no me de problemas si abs() retorna double
+			if(abs((fd-fi)) < 2 && abs((cd-ci)) < 2){
+				if(tab[fd][cd]=='.')
+					return 1;
+				else
+					return 0;
+			}
+			else{
+				if(tab[fd][cd]=='.')
+					return 2;
+				else
+					return 0;
+			}
 		}
 		else return 0;
 	}
