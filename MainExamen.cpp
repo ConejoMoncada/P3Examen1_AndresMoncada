@@ -1,4 +1,4 @@
-/*#include "Validaciones.h"*/
+#include "Validaciones.h"
 #include<iostream>
 #include<string>
 using namespace std;
